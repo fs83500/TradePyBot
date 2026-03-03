@@ -5,7 +5,7 @@ FastAPI main application - TradePyBot
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.config import settings
-from backend.api import auth, trades, portfolio, agents, websocket
+from backend.api import auth, trades, portfolio, agents, websocket, stats
 
 # Create FastAPI app
 app = FastAPI(
@@ -29,6 +29,7 @@ app.include_router(trades.router)
 app.include_router(portfolio.router)
 app.include_router(agents.router)
 app.include_router(websocket.router)
+app.include_router(stats.router)
 
 
 @app.get("/")

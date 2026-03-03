@@ -9,7 +9,7 @@ from backend.database.crud import CRUD
 from backend.models.trade import Trade, TradeDirection, TradeStatus
 from backend.config import settings
 from datetime import datetime
-from typing import List
+from typing import List, Dict, Any
 
 router = APIRouter(prefix="/api/trades", tags=["trades"])
 

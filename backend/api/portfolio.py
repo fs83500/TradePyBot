@@ -8,7 +8,7 @@ from backend.database.db import get_db
 from backend.database.crud import CRUD
 from backend.models.portfolio import Portfolio
 from datetime import datetime
-from typing import List
+from typing import List, Dict, Any
 
 router = APIRouter(prefix="/api/portfolio", tags=["portfolio"])
 
