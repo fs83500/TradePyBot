@@ -46,6 +46,7 @@ export default function Integrations() {
     }
   }
   
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const getTypeIcon = (type: string) => {
     switch (type) {
       case 'exchange': return '💱'

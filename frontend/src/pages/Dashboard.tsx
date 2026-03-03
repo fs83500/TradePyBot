@@ -55,7 +55,7 @@ export default function Dashboard() {
   })
   const [stats, setStats] = useState<Stats | null>(null)
   const [loading, setLoading] = useState(true)
-  const { prices, connected } = useMarketData()
+  const { connected } = useMarketData()
   
   useEffect(() => {
     loadDashboardData()

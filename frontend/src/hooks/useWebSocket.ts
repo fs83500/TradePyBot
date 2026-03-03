@@ -11,7 +11,7 @@ export function useWebSocket(endpoint: string, options: UseWebSocketOptions = {}
   const [connected, setConnected] = useState(false)
   const [lastMessage, setLastMessage] = useState<any>(null)
   const wsRef = useRef<WebSocket | null>(null)
-  const reconnectTimeout = useRef<NodeJS.Timeout | null>(null)
+  const reconnectTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const connect = () => {
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
