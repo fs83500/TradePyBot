@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePyBot - Statistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bar-heliox { width: 80%; }
+        .bar-syntax { width: 50%; }
+        .bar-prisme { width: 30%; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900">TradePyBot</span>
+            </div>
+            <nav class="flex items-center gap-6">
+                <a href="#" class="text-gray-500 hover:text-gray-700">Dashboard</a>
+                <a href="#" class="text-gray-500 hover:text-gray-700">Integrations</a>
+                <a href="#" class="text-purple-600 font-medium">Stats</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Title -->
+        <h1 class="text-2xl font-bold text-gray-900 mb-8">Statistics</h1>
+
+        <!-- Performance Chart -->
+        <div class="bg-white rounded-2xl shadow-sm p-6 mb-8">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Performance Over Time</h2>
+            <div class="h-64 flex items-end gap-2">
+                <!-- Simple bar chart representation -->
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-full bg-green-500 rounded-t" style="height: 60%"></div>
+                    <span class="text-xs mt-2 text-gray-500">Jan</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-full bg-green-500 rounded-t" style="height: 75%"></div>
+                    <span class="text-xs mt-2 text-gray-500">Feb</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-full bg-green-500 rounded-t" style="height: 45%"></div>
+                    <span class="text-xs mt-2 text-gray-500">Mar</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-full bg-green-500 rounded-t" style="height: 80%"></div>
+                    <span class="text-xs mt-2 text-gray-500">Apr</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-full bg-green-500 rounded-t" style="height: 55%"></div>
+                    <span class="text-xs mt-2 text-gray-500">May</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-full bg-green-500 rounded-t" style="height: 90%"></div>
+                    <span class="text-xs mt-2 text-gray-500">Jun</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-full bg-green-500 rounded-t" style="height: 70%"></div>
+                    <span class="text-xs mt-2 text-gray-500">Jul</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-full bg-green-500 rounded-t" style="height: 85%"></div>
+                    <span class="text-xs mt-2 text-gray-500">Aug</span>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-between text-sm">
+                <div>
+                    <span class="text-gray-500">Total Return:</span>
+                    <span class="text-green-500 font-bold ml-2">+28.5%</span>
+                </div>
+                <div>
+                    <span class="text-gray-500">Sharpe Ratio:</span>
+                    <span class="text-gray-900 font-bold ml-2">1.45</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk by AI -->
+        <div class="bg-white rounded-2xl shadow-sm p-6 mb-8">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Risk Level by AI Agent</h2>
+            <div class="space-y-4">
+                <!-- Heliox -->
+                <div class="flex items-center gap-4">
+                    <div class="w-24 flex items-center gap-2">
+                        <span class="text-2xl">🌟</span>
+                        <span class="font-medium text-gray-900">Heliox</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="h-4 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 bar-heliox"></div>
+                        </div>
+                    </div>
+                    <div class="w-16 text-right">
+                        <span class="text-red-500 font-bold">8/10</span>
+                    </div>
+                    <div class="w-24 text-right">
+                        <span class="text-red-500 text-sm">Aggressive</span>
+                    </div>
+                </div>
+                
+                <!-- Syntax -->
+                <div class="flex items-center gap-4">
+                    <div class="w-24 flex items-center gap-2">
+                        <span class="text-2xl">🔧</span>
+                        <span class="font-medium text-gray-900">Syntax</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="h-4 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 bar-syntax"></div>
+                        </div>
+                    </div>
+                    <div class="w-16 text-right">
+                        <span class="text-yellow-500 font-bold">5/10</span>
+                    </div>
+                    <div class="w-24 text-right">
+                        <span class="text-yellow-500 text-sm">Moderate</span>
+                    </div>
+                </div>
+                
+                <!-- Prisme -->
+                <div class="flex items-center gap-4">
+                    <div class="w-24 flex items-center gap-2">
+                        <span class="text-2xl">🎨</span>
+                        <span class="font-medium text-gray-900">Prisme</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="h-4 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 bar-prisme"></div>
+                        </div>
+                    </div>
+                    <div class="w-16 text-right">
+                        <span class="text-green-500 font-bold">3/10</span>
+                    </div>
+                    <div class="w-24 text-right">
+                        <span class="text-green-500 text-sm">Conservative</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Win Rate by AI -->
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <h3 class="text-sm text-gray-500 mb-4">Win Rate by AI</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🌟</span>
+                            <span class="font-medium">Heliox</span>
+                        </div>
+                        <span class="text-green-500 font-bold">72%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🔧</span>
+                            <span class="font-medium">Syntax</span>
+                        </div>
+                        <span class="text-green-500 font-bold">65%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🎨</span>
+                            <span class="font-medium">Prisme</span>
+                        </div>
+                        <span class="text-yellow-500 font-bold">58%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Trade -->
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <h3 class="text-sm text-gray-500 mb-4">Best Trade</h3>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-green-500">+$1,250.00</div>
+                        <div class="text-sm text-gray-500">BTC/USDT • Heliox</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Worst Trade -->
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <h3 class="text-sm text-gray-500 mb-4">Worst Trade</h3>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-red-500">-$890.00</div>
+                        <div class="text-sm text-gray-500">ETH/USDT • Prisme</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Feedback Section -->
+        <div class="bg-white rounded-2xl shadow-sm p-6">
+            <h2 class="text-lg font-bold text-gray-900 mb-4">Recent AI Feedback</h2>
+            <div class="space-y-4">
+                <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-lg">🌟</span>
+                        <span class="font-medium text-gray-900">Heliox</span>
+                        <span class="text-gray-400 text-sm">• 2 minutes ago</span>
+                    </div>
+                    <p class="text-gray-600">"BTC showed strong momentum signals. Entered long position with tight stop-loss. Risk level 8/10 suitable for this aggressive trade."</p>
+                </div>
+                
+                <div class="border-l-4 border-blue-500 pl-4 py-2">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-lg">🔧</span>
+                        <span class="font-medium text-gray-900">Syntax</span>
+                        <span class="text-gray-400 text-sm">• 15 minutes ago</span>
+                    </div>
+                    <p class="text-gray-600">"ETH price deviated from mean by 2.5 standard deviations. Mean reversion strategy suggests selling. Risk level 5/10 maintained."</p>
+                </div>
+                
+                <div class="border-l-4 border-purple-500 pl-4 py-2">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-lg">🎨</span>
+                        <span class="font-medium text-gray-900">Prisme</span>
+                        <span class="text-gray-400 text-sm">• 1 hour ago</span>
+                    </div>
+                    <p class="text-gray-600">"News sentiment for AAPL turned positive after earnings beat. Conservative entry with small position size. Risk level 3/10 appropriate."</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

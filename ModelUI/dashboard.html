@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePyBot - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slider-conservative { background: linear-gradient(to right, #22C55E 0%, #22C55E 30%, #D1D5DB 30%); }
+        .slider-moderate { background: linear-gradient(to right, #22C55E 0%, #F59E0B 60%, #D1D5DB 60%); }
+        .slider-aggressive { background: linear-gradient(to right, #22C55E 0%, #F59E0B 60%, #EF4444 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900">TradePyBot</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Connected</span>
+                <button class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-gray-500 text-sm">Balance</span>
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.4 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.4-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div class="text-3xl font-bold text-gray-900">$12,450.00</div>
+                <div class="text-green-500 text-sm mt-1">+$1,250.00 (10.2%)</div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-gray-500 text-sm">Win Rate</span>
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                </div>
+                <div class="text-3xl font-bold text-gray-900">68.5%</div>
+                <div class="text-gray-500 text-sm mt-1">137 / 200 trades</div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-gray-500 text-sm">P&L</span>
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                </div>
+                <div class="text-3xl font-bold text-green-500">+$2,847.50</div>
+                <div class="text-gray-500 text-sm mt-1">This month</div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-gray-500 text-sm">Active Trades</span>
+                    <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div class="text-3xl font-bold text-gray-900">4</div>
+                <div class="text-gray-500 text-sm mt-1">BTC, ETH, AAPL, TSLA</div>
+            </div>
+        </div>
+
+        <!-- AI Agents Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">AI Agents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Heliox -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center">
+                                <span class="text-2xl">🌟</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Heliox</h3>
+                                <span class="text-sm text-gray-500">Momentum</span>
+                            </div>
+                        </div>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Active</span>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Win Rate</span>
+                            <span class="font-medium text-gray-900">72%</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Positions</span>
+                            <span class="font-medium text-gray-900">4/10</span>
+                        </div>
+                        
+                        <!-- Risk Slider -->
+                        <div class="pt-2">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-gray-500">Risk Level</span>
+                                <span class="font-medium text-red-500">8/10 (Aggressive)</span>
+                            </div>
+                            <div class="relative">
+                                <div class="h-2 rounded-full slider-aggressive"></div>
+                                <div class="absolute top-0 left-4/5 w-4 h-4 bg-white border-2 border-red-500 rounded-full -mt-1 shadow"></div>
+                            </div>
+                            <div class="flex justify-between text-xs mt-1">
+                                <span class="text-green-500">Conservative</span>
+                                <span class="text-red-500">Aggressive</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-2 border-t border-gray-100">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Capital</span>
+                                <span class="font-medium text-gray-900">40%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Syntax -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center">
+                                <span class="text-2xl">🔧</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Syntax</h3>
+                                <span class="text-sm text-gray-500">Mean Reversion</span>
+                            </div>
+                        </div>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Active</span>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Win Rate</span>
+                            <span class="font-medium text-gray-900">65%</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Positions</span>
+                            <span class="font-medium text-gray-900">3/10</span>
+                        </div>
+                        
+                        <!-- Risk Slider -->
+                        <div class="pt-2">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-gray-500">Risk Level</span>
+                                <span class="font-medium text-yellow-500">5/10 (Moderate)</span>
+                            </div>
+                            <div class="relative">
+                                <div class="h-2 rounded-full slider-moderate"></div>
+                                <div class="absolute top-0 left-1/2 w-4 h-4 bg-white border-2 border-yellow-500 rounded-full -mt-1 shadow"></div>
+                            </div>
+                            <div class="flex justify-between text-xs mt-1">
+                                <span class="text-green-500">Conservative</span>
+                                <span class="text-red-500">Aggressive</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-2 border-t border-gray-100">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Capital</span>
+                                <span class="font-medium text-gray-900">35%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Prisme -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-500 rounded-xl flex items-center justify-center">
+                                <span class="text-2xl">🎨</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Prisme</h3>
+                                <span class="text-sm text-gray-500">Sentiment</span>
+                            </div>
+                        </div>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Active</span>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Win Rate</span>
+                            <span class="font-medium text-gray-900">58%</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Positions</span>
+                            <span class="font-medium text-gray-900">2/10</span>
+                        </div>
+                        
+                        <!-- Risk Slider -->
+                        <div class="pt-2">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-gray-500">Risk Level</span>
+                                <span class="font-medium text-green-500">3/10 (Conservative)</span>
+                            </div>
+                            <div class="relative">
+                                <div class="h-2 rounded-full slider-conservative"></div>
+                                <div class="absolute top-0 left-[30%] w-4 h-4 bg-white border-2 border-green-500 rounded-full -mt-1 shadow"></div>
+                            </div>
+                            <div class="flex justify-between text-xs mt-1">
+                                <span class="text-green-500">Conservative</span>
+                                <span class="text-red-500">Aggressive</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-2 border-t border-gray-100">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Capital</span>
+                                <span class="font-medium text-gray-900">25%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Trades -->
+        <div class="bg-white rounded-2xl shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Recent Trades</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="text-left text-gray-500 text-sm">
+                            <th class="pb-3">Time</th>
+                            <th class="pb-3">Asset</th>
+                            <th class="pb-3">Type</th>
+                            <th class="pb-3">Price</th>
+                            <th class="pb-3">Amount</th>
+                            <th class="pb-3">AI Agent</th>
+                            <th class="pb-3">P&L</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-t border-gray-100">
+                            <td class="py-3">10:32</td>
+                            <td class="py-3 font-medium">BTC/USDT</td>
+                            <td class="py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">BUY</span></td>
+                            <td class="py-3">$42,350</td>
+                            <td class="py-3">0.5 BTC</td>
+                            <td class="py-3">Heliox</td>
+                            <td class="py-3 text-green-500">+$127.50</td>
+                        </tr>
+                        <tr class="border-t border-gray-100">
+                            <td class="py-3">10:15</td>
+                            <td class="py-3 font-medium">ETH/USDT</td>
+                            <td class="py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs">SELL</span></td>
+                            <td class="py-3">$2,245</td>
+                            <td class="py-3">2.0 ETH</td>
+                            <td class="py-3">Syntax</td>
+                            <td class="py-3 text-red-500">-$45.00</td>
+                        </tr>
+                        <tr class="border-t border-gray-100">
+                            <td class="py-3">09:48</td>
+                            <td class="py-3 font-medium">AAPL</td>
+                            <td class="py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">BUY</span></td>
+                            <td class="py-3">$178.50</td>
+                            <td class="py-3">10 shares</td>
+                            <td class="py-3">Prisme</td>
+                            <td class="py-3 text-green-500">+$35.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
